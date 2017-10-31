@@ -8,10 +8,16 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
-  selectedItem: any;
+  title;
+  description;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+  constructor(public navParams: NavParams) {
+
   }
+
+  ionViewDidLoad(){
+    this.title = this.navParams.get('item').title;
+    this.description = this.navParams.get('item').description;
+  }
+
 }
