@@ -14,7 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 import { Data } from '../providers/data/data';
-
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { Data } from '../providers/data/data';
     Data,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RemoteServiceProvider,
+    FingerprintAIO,
   ]
 })
 export class AppModule {}
