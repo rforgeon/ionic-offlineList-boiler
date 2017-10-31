@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>My First List</ion-title>
+    <ion-title>List</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
     </ion-buttons>
@@ -12,14 +12,14 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding>
-      <ion-item ion-item *ngFor="let item of items" (click)="viewItem(item)">
+    <ion-item-sliding *ngFor="let item of items" (click)="viewItem(item)">
+      <ion-item >
         {{item.title}}
         <div class="item-note" item-right>
           {{item.description}}
         </div>
       </ion-item>
-      <ion-item-options side="right" *ngFor="let item of items">
+      <ion-item-options *ngFor="let item of items">
         <button ion-button color="danger" (click)="removeItem(item)">
           Delete
         </button>
